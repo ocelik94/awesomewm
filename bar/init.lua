@@ -28,7 +28,6 @@ local systray = require("bar.modules.systray")
 local taglist = require("bar.modules.taglist")
 local tasklist = require("bar.modules.tasklist")
 local button = require("bar.modules.button")
-local mpd = require("bar.modules.mpd")
 local redshift = require("bar.modules.redshift")
 local network_speed = require("bar.modules.net_speed_widget")
 
@@ -40,7 +39,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
     s.calendar = require("bar.modules.calendar").setup(s)
     s.dashboard = require("bar.modules.button.dashboard").setup(s)
-    s.music_panel = require("bar.modules.mpd.popup").setup(s)
 
     awful.wallpaper({
         screen = s,
@@ -72,7 +70,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
             },
             { -- Middle widget
                 layout = wibox.layout.flex.horizontal,
-                mpd,
             },
             { -- Right widgets
                 layout = wibox.layout.fixed.horizontal,

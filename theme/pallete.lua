@@ -1,2 +1,2 @@
 
-return require("theme.rosepine")
+return require("theme.dark")
