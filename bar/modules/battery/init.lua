@@ -2,7 +2,7 @@ local wibox = require("wibox")
 local awful = require("awful")
 
 local mybattery = awful.widget.watch(
-    { awful.util.shell, "-c", "upower -i /org/freedesktop/UPower/devices/battery_BAT | sed -n '/present/,/icon-name/p'" },
+    { awful.util.shell, "-c", "upower -i /org/freedesktop/UPower/devices/battery_BAT0 | sed -n '/present/,/icon-name/p'" },
     30,
     function(widget, stdout)
         local bat_now = {
