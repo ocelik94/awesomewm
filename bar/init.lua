@@ -30,6 +30,7 @@ local tasklist = require("bar.modules.tasklist")
 local button = require("bar.modules.button")
 local redshift = require("bar.modules.redshift")
 local network_speed = require("bar.modules.net_speed_widget")
+local battery = require("bar.module.battery")
 
 --      ────────────────────────────────────────────────────────────
 
@@ -77,6 +78,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
                 systray,
                 redshift,
                 volume,
+                battery,
                 time,
                 date,
                 button,
