@@ -12,6 +12,11 @@ awful.spawn.easy_async_with_shell(
 )
 
 awful.spawn.easy_async_with_shell(
+    'ps x | grep "polkit-kde-authentication-agent-1" | grep -v grep | awk "{print $1}" | xargs kill',
+    function() awful.spawn("/usr/lib/polkit-kde-authentication-agent-1") end
+)
+
+awful.spawn.easy_async_with_shell(
     'ps x | grep "picom" | grep -v grep | awk "{print $1}" | xargs kill',
     function() awful.spawn("picom") end
 )
